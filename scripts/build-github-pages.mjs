@@ -34,8 +34,8 @@ async function renderHomePage() {
 
 function withPagesBase(content) {
   return content
-    .replaceAll("/assets/", `${basePath}/assets/`)
-    .replaceAll("/resources/", `${basePath}/resources/`)
+    .replace(/(?:\/DOCP)*\/assets\//g, `${basePath}/assets/`)
+    .replace(/(?:\/DOCP)*\/resources\//g, `${basePath}/resources/`)
     .replaceAll('href="/"', `href="${basePath}/"`);
 }
 
