@@ -9,6 +9,13 @@ type InteractionHighlight = {
   summary: string;
   screenIndex: number;
   focusStep: number;
+  videoSrc?: string;
+};
+
+type ShowcaseVideo = {
+  label: string;
+  title: string;
+  src: string;
 };
 
 type Project = {
@@ -28,11 +35,16 @@ type Project = {
   tags: string[];
   screens: string[];
   coverAsset?: string;
+  coverVideoAsset?: string;
   screenAssets?: string[];
   flow: string[];
   accent: string;
   video: boolean;
   videoSrc?: string;
+  videoLabel?: string;
+  mediaTitle?: string;
+  mediaDescription?: string;
+  showcaseVideos?: ShowcaseVideo[];
   documentAsset?: string;
   highlights?: InteractionHighlight[];
 };
@@ -210,8 +222,62 @@ const projects: Project[] = [
     documentAsset: "/resources/运营活动/组队竞赛活动/文档/节日大富翁活动增加小队合作.jpg",
   },
   {
-    id: "guild-system",
+    id: "hero-video-system",
     index: "04",
+    category: "系统玩法",
+    title: "英雄视频展示系统",
+    subtitle: "把单支英雄视频，搭建成可分层、可批量、可复用的展示能力",
+    year: "2026",
+    platform: "多系统",
+    role: "体验设计 / 系统搭建",
+    duration: "自主提案 · 全流程搭建",
+    brief: "围绕英雄稀有度、养成节点与使用场景，建立分层展示标准，并将立绘分析、分镜设计、视频产出和系统接入串成一套完整能力。",
+    challenge: "英雄是卡牌价值的核心入口，但静态立绘难以持续强化价值感；逐支定制视频成本高、品质差异不清，也无法快速覆盖活动、招募与子界面。",
+    decision: "先定义橙色与紫色英雄的展示层级，再跑通可批量执行的视频自动化产线，并以橙色单通道、紫色双通道形成可复用的双模接入方式。",
+    result: "英雄视频从一次性包装升级为跨系统复用的展示能力，不同品质获得清晰层次，同一套素材也能快速接入子界面、活动与招募场景。",
+    tags: ["品质分层", "视频自动化", "多界面接入"],
+    screens: ["橙色品质展示", "紫色双通道展示", "多界面接入矩阵"],
+    coverVideoAsset: "/resources/英雄视频系统/orange-compare.mp4",
+    flow: ["确立分层标准", "立绘分析与分镜", "自动化批量产出", "双模接入多场景"],
+    highlights: [
+      {
+        title: "品质层级一眼可辨",
+        summary: "先按稀有度定义镜头密度、动作幅度和特效强度，让橙色英雄的核心价值不依赖额外文字说明。",
+        screenIndex: 0,
+        focusStep: 0,
+        videoSrc: "/resources/英雄视频系统/orange-compare.mp4",
+      },
+      {
+        title: "自动化产线保持一致",
+        summary: "把立绘分析、分镜设计与视频生成组织成可重复执行的路径，批量扩展英雄时仍能维持统一体验标准。",
+        screenIndex: 1,
+        focusStep: 2,
+        videoSrc: "/resources/英雄视频系统/purple-compare.mp4",
+      },
+      {
+        title: "双模能力快速接入",
+        summary: "橙色单通道与紫色双通道覆盖不同品质，并用同一套播放能力进入子界面、活动与招募，不再逐页重复设计。",
+        screenIndex: 2,
+        focusStep: 3,
+        videoSrc: "/resources/英雄视频系统/招募界面.mp4",
+      },
+    ],
+    accent: "pink",
+    video: true,
+    videoSrc: "/resources/英雄视频系统/orange-compare.mp4",
+    videoLabel: "橙色品质展示",
+    mediaTitle: "先看品质分层，再看多场景接入",
+    mediaDescription: "主展示在前，紫色品质与三类接入场景紧随其后",
+    showcaseVideos: [
+      { label: "01 / QUALITY", title: "紫色英雄双通道", src: "/resources/英雄视频系统/purple-compare.mp4" },
+      { label: "02 / SUB PAGE", title: "子界面接入", src: "/resources/英雄视频系统/子界面.mp4" },
+      { label: "03 / EVENT", title: "活动界面接入", src: "/resources/英雄视频系统/活动界面.mp4" },
+      { label: "04 / RECRUIT", title: "招募界面接入", src: "/resources/英雄视频系统/招募界面.mp4" },
+    ],
+  },
+  {
+    id: "guild-system",
+    index: "05",
     category: "系统玩法",
     title: "共创公会系统",
     subtitle: "让协作关系可感知，让每一次贡献都有回应",
@@ -251,7 +317,7 @@ const projects: Project[] = [
   },
   {
     id: "equipment-build",
-    index: "05",
+    index: "06",
     category: "系统玩法",
     title: "装备构筑实验室",
     subtitle: "把数值比较转化为可理解、可尝试的构筑决策",
@@ -291,7 +357,7 @@ const projects: Project[] = [
   },
   {
     id: "companion",
-    index: "06",
+    index: "07",
     category: "系统玩法",
     title: "伙伴羁绊网络",
     subtitle: "把线性养成，变成有选择、有回响的关系网络",
@@ -331,7 +397,7 @@ const projects: Project[] = [
   },
   {
     id: "onboarding",
-    index: "07",
+    index: "08",
     category: "其他",
     title: "无字新手引导",
     subtitle: "用环境、镜头与反馈，让玩家在行动中学会规则",
@@ -371,7 +437,7 @@ const projects: Project[] = [
   },
   {
     id: "accessibility",
-    index: "08",
+    index: "09",
     category: "其他",
     title: "战斗可访问性套件",
     subtitle: "不是降低挑战，而是让玩家选择适合自己的信息方式",
@@ -411,7 +477,7 @@ const projects: Project[] = [
   },
   {
     id: "design-system",
-    index: "09",
+    index: "10",
     category: "其他",
     title: "游戏交互规范库",
     subtitle: "让体验原则进入协作日常，而不是停在文档里",
@@ -629,9 +695,9 @@ export default function Home() {
         <div className="section-heading">
           <div>
             <p className="eyebrow">SELECTED WORKS / 精选作品</p>
-            <h2>三个深度案例，<br />六个系统命题。</h2>
+            <h2>四个深度案例，<br />六个系统命题。</h2>
           </div>
-          <p>前三个案例包含真实界面、交互稿与演示，<br />其余项目展示我对不同体验问题的拆解方式。</p>
+          <p>前四个案例包含真实界面、动态演示与设计路径，<br />其余项目展示我对不同体验问题的拆解方式。</p>
         </div>
 
         <div className="category-bar" aria-label="作品分类">
@@ -664,14 +730,19 @@ export default function Home() {
                     if (!expanded) setActiveHighlightIndex(0);
                   }}
                 >
-                  <div className={`project-art art-${project.accent} ${project.coverAsset ? "has-cover" : ""}`}>
+                  <div className={`project-art art-${project.accent} ${project.coverAsset || project.coverVideoAsset ? "has-cover" : ""}`}>
                     {project.coverAsset && <img className="project-cover" src={project.coverAsset} alt="" loading="lazy" />}
+                    {project.coverVideoAsset && (
+                      <video className="project-cover project-cover-video" autoPlay muted loop playsInline preload="metadata" aria-label={`${project.title}动态封面`}>
+                        <source src={project.coverVideoAsset} type="video/mp4" />
+                      </video>
+                    )}
                     <span className="art-number">{project.index}</span>
-                    {!project.coverAsset && <><div className="art-window window-back"><i /><i /><i /></div><div className="art-window window-front"><b /><span /><span /><em /></div></>}
+                    {!project.coverAsset && !project.coverVideoAsset && <><div className="art-window window-back"><i /><i /><i /></div><div className="art-window window-front"><b /><span /><span /><em /></div></>}
                     <small>{project.category} / {project.year}</small>
                   </div>
                   <div className="project-copy">
-                    <div className="project-meta"><span>{project.index}</span><span>{project.category}</span><span>{project.year}</span><b className={project.coverAsset ? "" : "structure-case"}>{project.coverAsset ? "完整案例" : "结构案例"}</b></div>
+                    <div className="project-meta"><span>{project.index}</span><span>{project.category}</span><span>{project.year}</span><b className={project.coverAsset || project.coverVideoAsset ? "" : "structure-case"}>{project.coverAsset || project.coverVideoAsset ? "完整案例" : "结构案例"}</b></div>
                     <h3>{project.title}</h3>
                     <p>{project.subtitle}</p>
                     <div className="project-quick-meta"><span>{project.role}</span><span>{project.platform}</span></div>
@@ -708,18 +779,22 @@ export default function Home() {
                         </dl>
                         <div className="focus-stage" aria-live="polite">
                           <button
-                            className={`focus-screen focus-${project.accent} ${project.screenAssets?.[activeHighlight.screenIndex] ? "has-real-screen" : "has-blueprint"}`}
+                            className={`focus-screen focus-${project.accent} ${activeHighlight.videoSrc || project.screenAssets?.[activeHighlight.screenIndex] ? "has-real-screen" : "has-blueprint"}`}
                             type="button"
                             onClick={() => openPreview({
                               project: project.title,
                               screen: project.screens[activeHighlight.screenIndex],
                               accent: project.accent,
-                              kind: "image",
-                              src: project.screenAssets?.[activeHighlight.screenIndex],
+                              kind: activeHighlight.videoSrc ? "video" : "image",
+                              src: activeHighlight.videoSrc || project.screenAssets?.[activeHighlight.screenIndex],
                             })}
-                            aria-label={`放大查看${project.title}的${project.screens[activeHighlight.screenIndex]}界面`}
+                            aria-label={`查看${project.title}的${project.screens[activeHighlight.screenIndex]}${activeHighlight.videoSrc ? "视频" : "界面"}`}
                           >
-                            {project.screenAssets?.[activeHighlight.screenIndex] ? (
+                            {activeHighlight.videoSrc ? (
+                              <video key={`${project.id}-${activeHighlight.screenIndex}`} autoPlay muted loop playsInline preload="metadata">
+                                <source src={activeHighlight.videoSrc} type="video/mp4" />
+                              </video>
+                            ) : project.screenAssets?.[activeHighlight.screenIndex] ? (
                               <img
                                 key={`${project.id}-${activeHighlight.screenIndex}`}
                                 src={project.screenAssets[activeHighlight.screenIndex]}
@@ -736,7 +811,7 @@ export default function Home() {
                             )}
                             <span>
                               <b>{project.screens[activeHighlight.screenIndex]}</b>
-                              <i>{project.screenAssets?.[activeHighlight.screenIndex] ? "点击查看大图 ↗" : "待替换真实界面"}</i>
+                              <i>{activeHighlight.videoSrc ? "点击放大播放 ↗" : project.screenAssets?.[activeHighlight.screenIndex] ? "点击查看大图 ↗" : "待替换真实界面"}</i>
                             </span>
                           </button>
                           <InteractionFlowViz project={project} highlight={activeHighlight} />
@@ -746,15 +821,15 @@ export default function Home() {
 
                     <section className={`media-showcase video-${project.accent} ${project.video ? "has-video" : "screens-only"}`} aria-labelledby={`media-title-${project.id}`}>
                       <div className="media-heading">
-                        <h4 id={`media-title-${project.id}`}>{project.video ? "先看操作节奏，再看关键状态" : "关键界面与状态"}</h4>
-                        <p>{project.screenAssets ? "视频在前，界面在后；点击均可放大查看" : "结构示意用于说明信息层级"}</p>
+                        <h4 id={`media-title-${project.id}`}>{project.mediaTitle || (project.video ? "先看操作节奏，再看关键状态" : "关键界面与状态")}</h4>
+                        <p>{project.mediaDescription || (project.screenAssets ? "视频在前，界面在后；点击均可放大查看" : "结构示意用于说明信息层级")}</p>
                       </div>
 
                       {project.video && (
                         <div className="media-banner">
                         {project.videoSrc ? (
                           <div className="video-preview-wrap">
-                            <span className="media-banner-label"><strong>01</strong><b>完整操作演示</b></span>
+                            <span className="media-banner-label"><strong>01</strong><b>{project.videoLabel || "完整操作演示"}</b></span>
                             <video className="video-player" controls preload="metadata" poster={project.coverAsset}>
                               <source src={project.videoSrc} type="video/mp4" />
                               您的浏览器不支持该视频格式。
@@ -769,31 +844,45 @@ export default function Home() {
 
                       <div className="media-gallery-heading">
                         <span>{project.video ? "02" : "01"}</span>
-                        <b>关键界面</b>
-                        <small>{String(project.screens.length).padStart(2, "0")} SCREENS</small>
+                        <b>{project.showcaseVideos ? "动态界面矩阵" : "关键界面"}</b>
+                        <small>{String(project.showcaseVideos?.length || project.screens.length).padStart(2, "0")} {project.showcaseVideos ? "VIDEOS" : "SCREENS"}</small>
                       </div>
-                      <div className={`screen-grid ${project.screenAssets ? "has-assets" : ""}`}>
-                        {project.screens.map((screen, screenIndex) => {
-                          const screenAsset = project.screenAssets?.[screenIndex];
-                          return (
-                            <button
-                              className={`screen-mock screen-${project.accent} ${screenAsset ? "has-image" : ""}`}
-                              type="button"
-                              key={screen}
-                              onClick={() => openPreview({ project: project.title, screen, accent: project.accent, kind: "image", src: screenAsset })}
-                              aria-label={`放大查看${project.title}的${screen}界面`}
-                            >
-                              {screenAsset ? (
-                                <img src={screenAsset} alt="" loading="lazy" />
-                              ) : (
-                                <><div className="screen-top"><i /><span>{String(screenIndex + 1).padStart(2, "0")}</span></div><div className="screen-scene"><span /><span /><b /></div><div className="screen-lines"><i /><i /><i /></div></>
-                              )}
-                              <strong>{screen}</strong>
-                              <small>{screenAsset ? "点击放大 ↗" : "结构示意 ↗"}</small>
-                            </button>
-                          );
-                        })}
-                      </div>
+                      {project.showcaseVideos ? (
+                        <div className="dynamic-video-grid">
+                          {project.showcaseVideos.map((item) => (
+                            <article className="dynamic-video-card" key={item.src}>
+                              <video autoPlay muted loop playsInline preload="metadata" aria-label={`${project.title} · ${item.title}`}>
+                                <source src={item.src} type="video/mp4" />
+                              </video>
+                              <div><span>{item.label}</span><b>{item.title}</b></div>
+                              <button type="button" onClick={() => openPreview({ project: project.title, screen: item.title, accent: project.accent, kind: "video", src: item.src })}>放大播放 ↗</button>
+                            </article>
+                          ))}
+                        </div>
+                      ) : (
+                        <div className={`screen-grid ${project.screenAssets ? "has-assets" : ""}`}>
+                          {project.screens.map((screen, screenIndex) => {
+                            const screenAsset = project.screenAssets?.[screenIndex];
+                            return (
+                              <button
+                                className={`screen-mock screen-${project.accent} ${screenAsset ? "has-image" : ""}`}
+                                type="button"
+                                key={screen}
+                                onClick={() => openPreview({ project: project.title, screen, accent: project.accent, kind: "image", src: screenAsset })}
+                                aria-label={`放大查看${project.title}的${screen}界面`}
+                              >
+                                {screenAsset ? (
+                                  <img src={screenAsset} alt="" loading="lazy" />
+                                ) : (
+                                  <><div className="screen-top"><i /><span>{String(screenIndex + 1).padStart(2, "0")}</span></div><div className="screen-scene"><span /><span /><b /></div><div className="screen-lines"><i /><i /><i /></div></>
+                                )}
+                                <strong>{screen}</strong>
+                                <small>{screenAsset ? "点击放大 ↗" : "结构示意 ↗"}</small>
+                              </button>
+                            );
+                          })}
+                        </div>
+                      )}
                     </section>
 
                     {project.documentAsset && (

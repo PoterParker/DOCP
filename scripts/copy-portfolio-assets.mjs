@@ -22,6 +22,7 @@ const assetFiles = [
 ];
 
 const profileFiles = ["yangxiao-portrait-cutout.png"];
+const standaloneGroups = ["英雄视频系统"];
 
 await rm(join(projectRoot, "dist", "client", "resources"), {
   recursive: true,
@@ -49,4 +50,11 @@ for (const file of profileFiles) {
   await cp(source, destination);
 }
 
-console.log(`Copied ${assetGroups.length} asset groups, ${assetFiles.length} web videos, and ${profileFiles.length} profile image.`);
+for (const group of standaloneGroups) {
+  const source = join(projectRoot, "public", "resources", group);
+  const destination = join(projectRoot, "dist", "client", "resources", group);
+  await mkdir(dirname(destination), { recursive: true });
+  await cp(source, destination, { recursive: true });
+}
+
+console.log(`Copied ${assetGroups.length} asset groups, ${assetFiles.length} web videos, ${standaloneGroups.length} standalone group, and ${profileFiles.length} profile image.`);

@@ -34,6 +34,8 @@ test("server-renders the portfolio home page", async () => {
   assert.match(html, /推币机/);
   assert.match(html, /钓鱼游戏/);
   assert.match(html, /组队竞赛活动/);
+  assert.match(html, /英雄视频展示系统/);
+  assert.match(html, /品质分层/);
   assert.match(html, /精选作品/);
   assert.match(html, /杨潇/);
   assert.match(html, /Tap4Fun/);
@@ -53,12 +55,13 @@ test("keeps portfolio content and metadata production-ready", async () => {
     readFile(new URL("../package.json", import.meta.url), "utf8"),
   ]);
 
-  assert.equal((page.match(/id: "/g) ?? []).length, 9);
-  assert.equal((page.match(/highlights: \[/g) ?? []).length, 9);
-  assert.equal((page.match(/focusStep: \d/g) ?? []).length, 27);
+  assert.equal((page.match(/id: "/g) ?? []).length, 10);
+  assert.equal((page.match(/highlights: \[/g) ?? []).length, 10);
+  assert.equal((page.match(/focusStep: \d/g) ?? []).length, 30);
   assert.match(page, /InteractionFlowViz/);
   assert.match(page, /className="focus-context"/);
   assert.match(page, /className={`media-showcase/);
+  assert.match(page, /className="dynamic-video-grid"/);
   assert.ok(page.indexOf('className="media-banner"') < page.indexOf('className={`screen-grid'));
   assert.doesNotMatch(page, /className="case-columns"/);
   assert.doesNotMatch(page, /className="detail-intro"/);
