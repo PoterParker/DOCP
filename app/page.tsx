@@ -222,8 +222,209 @@ const projects: Project[] = [
     documentAsset: "/resources/运营活动/组队竞赛活动/文档/节日大富翁活动增加小队合作.jpg",
   },
   {
-    id: "hero-video-system",
+    id: "quarantine-gameplay",
     index: "04",
+    category: "系统玩法",
+    title: "检疫玩法",
+    subtitle: "把身份核验、工具检测与生存决策串成一段连续的检疫叙事",
+    year: "2026",
+    platform: "移动端",
+    role: "系统交互设计",
+    duration: "完整流程设计",
+    brief: "以末日据点的检疫入口为舞台，把幸存者剧情、清洗、身份确认、透视检测、体温检测与最终去留决策组织成一段连续体验。",
+    challenge: "要把主机检疫玩法压缩成易操作的移动端竖屏体验，同时在一段新手流程里完成小游戏教学、世界观传达与资源识别；若把规则拆成说明页，玩家只会记住按钮而不会形成判断。",
+    decision: "用连续幸存者案例分配教学任务，把检疫拆成可配置节点；冲泥、透视与温度工具共享操作语法，身份、伤口与体温证据逐层收敛，最终去留结果再回写资源和剧情。",
+    result: "首轮检疫既是一条由示范到独立判断的学习曲线，也是一套可扩展的系统框架；后续只需更换幸存者类型、证据组合与节点配置，就能持续制造新的判断情境。",
+    tags: ["叙事引导", "检测交互", "生存决策"],
+    screens: ["冲泥前", "冲洗操作", "身份确认", "透视仪检测", "体温异常", "最终去留决策"],
+    coverAsset: "/resources/系统玩法/检疫玩法/封面/检疫玩法封面.png",
+    screenAssets: [
+      "/resources/系统玩法/检疫玩法/关键界面/1-冲泥前.png",
+      "/resources/系统玩法/检疫玩法/关键界面/2-冲洗操作.png",
+      "/resources/系统玩法/检疫玩法/关键界面/3-身份确认.png",
+      "/resources/系统玩法/检疫玩法/关键界面/4-透视仪检测.png",
+      "/resources/系统玩法/检疫玩法/关键界面/5-体温异常.png",
+      "/resources/系统玩法/检疫玩法/关键界面/6-最终决策.png",
+    ],
+    flow: ["剧情演绎", "冲泥清洁", "身份确认", "透视扫描", "体温检测", "去留决策"],
+    highlights: [
+      {
+        title: "用连续幸存者建立学习曲线",
+        summary: "每位幸存者只承担一个教学任务：先示范、再复习、最后让玩家独立判断；操作波峰与剧情信息交替出现，避免一次讲完所有规则。",
+        screenIndex: 0,
+        focusStep: 0,
+      },
+      {
+        title: "让幸存者类型决定引导强度",
+        summary: "一次性消耗型给出明确引导，资源型撤掉提示，剧情人物按叙事约束结果；同一套流程因此能同时服务教学、经营与世界观。",
+        screenIndex: 5,
+        focusStep: 0,
+      },
+      {
+        title: "把检疫拆成可配置节点",
+        summary: "剧情、冲泥、身份、透视、温度和决策组成可编排链路；冲泥等节点可按人物与剧情启用，后续扩展不必重做整套页面。",
+        screenIndex: 2,
+        focusStep: 2,
+      },
+      {
+        title: "让不同工具共享操作语法",
+        summary: "冲泥、透视与温度计都沿用滑动抬起、按住对准、完成反馈的同一套手势结构，玩家学会一次后只需理解工具用途。",
+        screenIndex: 3,
+        focusStep: 4,
+      },
+      {
+        title: "让证据逐层收敛而非重复",
+        summary: "身份卡确认对象，透视仪暴露伤口与感染点，温度计验证生命体征；每一步补充不同信息，最终形成可解释的判断。",
+        screenIndex: 4,
+        focusStep: 4,
+      },
+      {
+        title: "让去留决定影响资源与剧情",
+        summary: "拒绝意味着角色离开，批准可带来资源或后续剧情；误放感染者与驱逐健康者都会扣除基础货币，结果直接校验玩家判断。",
+        screenIndex: 5,
+        focusStep: 5,
+      },
+    ],
+    accent: "cyan",
+    video: false,
+    mediaDescription: "先看完整检疫节奏，再查看各检测工具与最终决策的关键界面。",
+    documentAsset: "/resources/系统玩法/检疫玩法/交互稿/检疫玩法交互稿.png",
+  },
+  {
+    id: "gem-workshop",
+    index: "05",
+    category: "系统玩法",
+    title: "宝石工坊",
+    subtitle: "把宝石搭配、共鸣技能与加工养成组织成一条可理解的构筑链",
+    year: "2026",
+    platform: "PC",
+    role: "系统交互设计",
+    duration: "完整流程设计",
+    brief: "围绕 KVK 宝石养成建立共鸣与工坊两层体验：玩家先用槽位组合形成共鸣技能，再在同一工坊中完成仓库查看、升级、合成、洗炼与分解。",
+    challenge: "宝石数量、品质、属性和加工方式都很密集；如果共鸣与养成各自分散成独立页面，玩家难以理解一颗宝石如何从资源变成构筑，再进一步影响战斗。",
+    decision: "用四槽共鸣图把搭配条件外显，始终保留背包、加工台与属性面板三块稳定区域；升级、合成、洗炼和分解沿用“选取—预览—确认”的操作语法，并在不可逆操作前补充对比与确认。",
+    result: "玩家能够在同一视觉上下文里完成选材、构筑和加工：槽位连线解释共鸣，属性面板解释变化，结果预览帮助判断，复杂养成因此形成连续而可控的闭环。",
+    tags: ["宝石构筑", "共鸣技能", "养成闭环"],
+    screens: ["共鸣空槽", "共鸣组合", "宝石仓库", "宝石合成", "宝石洗炼", "宝石分解"],
+    coverAsset: "/resources/系统玩法/宝石工坊/封面/宝石工坊封面.webp",
+    screenAssets: [
+      "/resources/系统玩法/宝石工坊/关键界面/1-共鸣空槽.png",
+      "/resources/系统玩法/宝石工坊/关键界面/2-共鸣组合.png",
+      "/resources/系统玩法/宝石工坊/关键界面/3-宝石仓库.png",
+      "/resources/系统玩法/宝石工坊/关键界面/4-宝石合成.png",
+      "/resources/系统玩法/宝石工坊/关键界面/5-宝石洗炼.png",
+      "/resources/系统玩法/宝石工坊/关键界面/6-宝石分解.png",
+    ],
+    flow: ["选择宝石", "填充槽位", "激活共鸣", "进入工坊", "加工并预览", "确认或保留"],
+    highlights: [
+      {
+        title: "让槽位关系直接解释共鸣",
+        summary: "四个槽位围绕技能核心排布，玩家拖入宝石时即可看到位置、属性与连线关系，不必先读规则再回到搭配页验证。",
+        screenIndex: 0,
+        focusStep: 1,
+      },
+      {
+        title: "让构筑结果即时回到战斗",
+        summary: "达成组合后，光圈闭合、技能点亮并给出使用入口；共鸣不止是数值加成，而是一项能被立即理解和验证的战斗能力。",
+        screenIndex: 1,
+        focusStep: 2,
+      },
+      {
+        title: "让多种加工共享同一上下文",
+        summary: "仓库、主加工台与属性面板始终保持稳定位置，切换升级、合成、洗炼和分解时只替换任务区域，减少重复定位成本。",
+        screenIndex: 2,
+        focusStep: 3,
+      },
+      {
+        title: "把高成本改造放在预览之后",
+        summary: "合成先呈现消耗与可能产出，洗炼同时展示新旧属性并让玩家选择保留，重要资源操作在确认前始终可比较。",
+        screenIndex: 4,
+        focusStep: 4,
+      },
+      {
+        title: "用批量与确认控制损失边界",
+        summary: "分解支持单选与批量选择，并在执行前汇总数量与返还内容；效率提升的同时保留最后一道防误触判断。",
+        screenIndex: 5,
+        focusStep: 5,
+      },
+    ],
+    accent: "orange",
+    video: false,
+    mediaDescription: "从原始交互稿逐张提取共鸣与工坊关键界面，展示完整养成链路。",
+    documentAsset: "/resources/系统玩法/宝石工坊/交互稿/宝石工坊交互稿-压缩.webp",
+  },
+  {
+    id: "extraction-gameplay",
+    index: "06",
+    category: "系统玩法",
+    title: "搜打撤玩法",
+    subtitle: "让战前投入、局内搜刮与撤离结算共同构成清晰的风险收益循环",
+    year: "2026",
+    platform: "PC",
+    role: "系统交互设计",
+    duration: "完整流程设计",
+    brief: "将英雄编队、装备与 Buff 配置、保险箱、局内战斗、双背包搜刮和撤离结算串成一轮完整的搜打撤体验。",
+    challenge: "玩家既要在战前理解投入成本与保险范围，又要在战中同时处理战斗、目标、背包空间和战利品价值；任何一层信息不清都会让风险变成不可控的挫败。",
+    decision: "战前把英雄、装备、Buff 与保险箱集中在同一准备台；局内界面优先保障战斗信息，再通过双背包并置、格子拖拽、叠加与冲突反馈支持搜刷取舍，最后用结算明确保险箱、背包与失败损失。",
+    result: "每轮体验形成“投入—战斗—搜刮—撤离—结算”的闭环。玩家能在进入战局前定义风险，在战斗中持续调整收益，并从结算中准确理解自己保住了什么、失去了什么。",
+    tags: ["风险收益", "背包拖拽", "撤离结算"],
+    screens: ["战前编队", "保险箱选择", "局内主页", "个人背包", "敌人战利品", "撤离结算"],
+    coverAsset: "/resources/系统玩法/搜打撤玩法/封面/搜打撤玩法封面.webp",
+    screenAssets: [
+      "/resources/系统玩法/搜打撤玩法/关键界面/1-战前编队.png",
+      "/resources/系统玩法/搜打撤玩法/关键界面/2-保险箱选择.png",
+      "/resources/系统玩法/搜打撤玩法/关键界面/3-局内主页.png",
+      "/resources/系统玩法/搜打撤玩法/关键界面/4-个人背包.png",
+      "/resources/系统玩法/搜打撤玩法/关键界面/5-敌人战利品.png",
+      "/resources/系统玩法/搜打撤玩法/关键界面/6-撤离结算.png",
+    ],
+    flow: ["英雄与装备", "Buff 与保险", "进入战局", "战斗和搜刮", "整理背包", "撤离结算"],
+    highlights: [
+      {
+        title: "战前先把风险选项摆上台面",
+        summary: "英雄、装备、Buff、背包容量与入场花费集中在同一准备页，玩家在开始前就能看清本轮投入，而不是进入战局后才发现缺口。",
+        screenIndex: 0,
+        focusStep: 0,
+      },
+      {
+        title: "用保险箱定义可承受损失",
+        summary: "保险箱以独立容量和明确价格出现，玩家主动选择要保护的资源；风险不是隐藏规则，而是一项可以在战前管理的策略。",
+        screenIndex: 1,
+        focusStep: 1,
+      },
+      {
+        title: "局内信息围绕行动优先级分层",
+        summary: "地图、队伍状态、目标与技能围绕战斗画面分布，详细悬赏和背包按需展开，避免搜刮信息持续遮挡即时操作。",
+        screenIndex: 2,
+        focusStep: 2,
+      },
+      {
+        title: "双背包并置完成搜刷取舍",
+        summary: "自己的背包与敌方战利品同时出现，价值详情置于两者之间；拾取、替换与快速领取都围绕一次比较完成。",
+        screenIndex: 4,
+        focusStep: 3,
+      },
+      {
+        title: "让格子规则在拖拽中被理解",
+        summary: "可放置格高亮、同类物品叠加、冲突格标红；若释放位置被占用，物品回到原位，让空间约束通过反馈而不是说明文字被掌握。",
+        screenIndex: 3,
+        focusStep: 4,
+      },
+      {
+        title: "结算明确保住什么、失去什么",
+        summary: "成功撤离区分保险箱、背包和结算奖励；失败则只保留受保护内容，用同一信息结构兑现战前的风险选择。",
+        screenIndex: 5,
+        focusStep: 5,
+      },
+    ],
+    accent: "lime",
+    video: false,
+    mediaDescription: "从原始交互稿提取战前、局内背包与结算关键界面，展示完整风险收益闭环。",
+    documentAsset: "/resources/系统玩法/搜打撤玩法/交互稿/搜打撤玩法交互稿-压缩.webp",
+  },
+  {
+    id: "hero-video-system",
+    index: "07",
     category: "系统玩法",
     title: "英雄视频展示系统",
     subtitle: "把单支英雄视频，搭建成可分层、可批量、可复用的展示能力",
@@ -277,7 +478,7 @@ const projects: Project[] = [
   },
   {
     id: "guild-system",
-    index: "05",
+    index: "08",
     category: "系统玩法",
     title: "共创公会系统",
     subtitle: "让协作关系可感知，让每一次贡献都有回应",
@@ -317,7 +518,7 @@ const projects: Project[] = [
   },
   {
     id: "equipment-build",
-    index: "06",
+    index: "09",
     category: "系统玩法",
     title: "装备构筑实验室",
     subtitle: "把数值比较转化为可理解、可尝试的构筑决策",
@@ -357,7 +558,7 @@ const projects: Project[] = [
   },
   {
     id: "companion",
-    index: "07",
+    index: "10",
     category: "系统玩法",
     title: "伙伴羁绊网络",
     subtitle: "把线性养成，变成有选择、有回响的关系网络",
@@ -397,7 +598,7 @@ const projects: Project[] = [
   },
   {
     id: "onboarding",
-    index: "08",
+    index: "11",
     category: "其他",
     title: "无字新手引导",
     subtitle: "用环境、镜头与反馈，让玩家在行动中学会规则",
@@ -437,7 +638,7 @@ const projects: Project[] = [
   },
   {
     id: "accessibility",
-    index: "09",
+    index: "12",
     category: "其他",
     title: "战斗可访问性套件",
     subtitle: "不是降低挑战，而是让玩家选择适合自己的信息方式",
@@ -477,7 +678,7 @@ const projects: Project[] = [
   },
   {
     id: "design-system",
-    index: "10",
+    index: "13",
     category: "其他",
     title: "游戏交互规范库",
     subtitle: "让体验原则进入协作日常，而不是停在文档里",
@@ -517,7 +718,132 @@ const projects: Project[] = [
   },
 ];
 
-const categories: Array<"全部" | Category> = ["全部", "运营活动", "系统玩法", "其他"];
+const initialPortfolioIds = new Set([
+  "coin-pusher",
+  "fishing-game",
+  "team-competition",
+  "quarantine-gameplay",
+  "gem-workshop",
+  "extraction-gameplay",
+]);
+
+const portfolioProjects = projects.filter((project) => initialPortfolioIds.has(project.id));
+const categories: Array<"全部" | "运营活动" | "系统玩法"> = ["全部", "运营活动", "系统玩法"];
+
+const quarantineVisualScreens = [
+  "/resources/系统玩法/检疫玩法/关键界面/1-冲泥前.png",
+  "/resources/系统玩法/检疫玩法/关键界面/2-冲洗操作.png",
+  "/resources/系统玩法/检疫玩法/关键界面/3-身份确认.png",
+  "/resources/系统玩法/检疫玩法/关键界面/4-透视仪检测.png",
+  "/resources/系统玩法/检疫玩法/关键界面/5-体温异常.png",
+  "/resources/系统玩法/检疫玩法/关键界面/6-最终决策.png",
+];
+
+function QuarantineFocusVisual({ activeIndex }: { activeIndex: number }) {
+  const visualMeta = [
+    ["LEARNING CURVE", "从示范到独立判断"],
+    ["SURVIVOR TYPES", "角色类型决定引导强度"],
+    ["MODULAR FLOW", "可配置的检疫流水线"],
+    ["TOOL GRAMMAR", "一次学习，多种工具复用"],
+    ["EVIDENCE CHAIN", "不同证据逐层收敛"],
+    ["DECISION LOOP", "去留结果回写资源与剧情"],
+  ][activeIndex] || ["SYSTEM FOCUS", "检疫系统设计"];
+
+  let body;
+  if (activeIndex === 0) {
+    const stages = [
+      ["剧情演绎", "建立悬念"], ["透视教学", "明确拒绝"], ["冲泥教学", "重复手势"],
+      ["温度教学", "补充证据"], ["自主检疫", "撤掉提示"], ["完成玩法", "接入世界观"],
+    ];
+    body = (
+      <div className="qfv-curve">
+        <div className="qfv-curve-wave" aria-hidden="true"><i /><i /><i /></div>
+        {stages.map(([title, note], index) => (
+          <div className={`qfv-curve-node node-${index + 1}`} key={title}>
+            <span>{String(index + 1).padStart(2, "0")}</span><b>{title}</b><small>{note}</small>
+          </div>
+        ))}
+        <div className="qfv-curve-caption"><b>小游戏教学</b><span>操作波峰与剧情信息交替出现</span><strong>世界观建立</strong></div>
+      </div>
+    );
+  } else if (activeIndex === 1) {
+    const types = [
+      { label: "一次性消耗型", action: "给出明确引导", result: "接受或拒绝", image: quarantineVisualScreens[0] },
+      { label: "资源型", action: "撤掉操作提示", result: "玩家独立判断", image: quarantineVisualScreens[4] },
+      { label: "剧情人物", action: "由剧情约束结果", result: "承接主线世界观", image: quarantineVisualScreens[5] },
+    ];
+    body = (
+      <div className="qfv-archetypes">
+        {types.map((type, index) => (
+          <article key={type.label}><span>0{index + 1}</span><img src={type.image} alt="" /><div><b>{type.label}</b><small>{type.action}</small><strong>{type.result}</strong></div></article>
+        ))}
+      </div>
+    );
+  } else if (activeIndex === 2) {
+    const modules = [
+      ["剧情演绎", "固定入口"], ["冲泥", "可选节点"], ["身份确认", "基础核验"],
+      ["透视仪", "伤口证据"], ["温度计", "体征证据"], ["决策", "统一出口"],
+    ];
+    body = (
+      <div className="qfv-pipeline">
+        <div className="qfv-pipeline-group"><span>叙事</span><b>建立人物动机</b></div>
+        <div className="qfv-pipeline-track">
+          {modules.map(([title, note], index) => <div className={`qfv-module ${index === 1 ? "optional" : ""}`} key={title}><span>0{index + 1}</span><b>{title}</b><small>{note}</small></div>)}
+        </div>
+        <div className="qfv-pipeline-group evidence"><span>检测</span><b>节点可增删、顺序可编排</b></div>
+      </div>
+    );
+  } else if (activeIndex === 3) {
+    const tools = [
+      { title: "冲泥", action: "按住滑动", feedback: "进度持续增长", image: quarantineVisualScreens[1] },
+      { title: "透视仪", action: "滑动抬起", feedback: "对准目标扫描", image: quarantineVisualScreens[3] },
+      { title: "温度计", action: "沿用同一手势", feedback: "颜色确认结果", image: quarantineVisualScreens[4] },
+    ];
+    body = (
+      <div className="qfv-tools">
+        {tools.map((tool, index) => <article key={tool.title}><div><img src={tool.image} alt="" /><span>0{index + 1}</span></div><b>{tool.title}</b><small>{tool.action}</small><strong>{tool.feedback}</strong></article>)}
+        <div className="qfv-shared-grammar"><span>滑动 / 按住</span><i>→</i><span>对准目标</span><i>→</i><span>完成反馈</span></div>
+      </div>
+    );
+  } else if (activeIndex === 4) {
+    const evidence = [
+      { title: "身份", note: "是不是本人？", image: quarantineVisualScreens[2] },
+      { title: "伤口", note: "有没有感染点？", image: quarantineVisualScreens[3] },
+      { title: "体征", note: "脉搏与体温是否异常？", image: quarantineVisualScreens[4] },
+      { title: "结论", note: "证据是否支持放行？", image: quarantineVisualScreens[5] },
+    ];
+    body = (
+      <div className="qfv-evidence">
+        {evidence.map((item, index) => <article key={item.title}><span>0{index + 1}</span><img src={item.image} alt="" /><div><b>{item.title}</b><small>{item.note}</small></div></article>)}
+        <p><span>身份信息</span><i>+</i><span>身体伤口</span><i>+</i><span>生命体征</span><strong>可解释的去留判断</strong></p>
+      </div>
+    );
+  } else {
+    body = (
+      <div className="qfv-decision">
+        <div className="qfv-decision-side reject">
+          <span>拒绝 / REJECT</span><b>幸存者离开且不再返回</b>
+          <div><small>感染者 · 正确阻断</small><strong className="positive">+50</strong></div>
+          <div><small>健康者 · 错误驱逐</small><strong className="negative">−50</strong></div>
+        </div>
+        <figure><img src={quarantineVisualScreens[5]} alt="" /><figcaption>证据汇总后的最终选择</figcaption></figure>
+        <div className="qfv-decision-side approve">
+          <span>批准 / APPROVE</span><b>接纳者进入资源或剧情链</b>
+          <div><small>健康者 · 正确接纳</small><strong className="positive">+50</strong></div>
+          <div><small>感染者 · 错误放行</small><strong className="negative">−50</strong></div>
+        </div>
+        <p>同一个动作不预设对错，玩家必须先完成证据判断；结果再同时回写经营资源与世界观。</p>
+      </div>
+    );
+  }
+
+  return (
+    <div className={`quarantine-focus-visual qfv-view-${activeIndex}`} key={activeIndex}>
+      <header><span>{visualMeta[0]}</span><b>{visualMeta[1]}</b><small>0{activeIndex + 1} / 06</small></header>
+      {body}
+    </div>
+  );
+}
 
 function InteractionFlowViz({ project, highlight }: { project: Project; highlight: InteractionHighlight }) {
   return (
@@ -560,16 +886,15 @@ export default function Home() {
   };
 
   const visibleProjects = useMemo(
-    () => projects.filter((project) => activeCategory === "全部" || project.category === activeCategory),
+    () => portfolioProjects.filter((project) => activeCategory === "全部" || project.category === activeCategory),
     [activeCategory],
   );
 
   const categoryCounts = useMemo(
     () => ({
-      全部: projects.length,
-      运营活动: projects.filter((project) => project.category === "运营活动").length,
-      系统玩法: projects.filter((project) => project.category === "系统玩法").length,
-      其他: projects.filter((project) => project.category === "其他").length,
+      全部: portfolioProjects.length,
+      运营活动: portfolioProjects.filter((project) => project.category === "运营活动").length,
+      系统玩法: portfolioProjects.filter((project) => project.category === "系统玩法").length,
     }),
     [],
   );
@@ -671,20 +996,38 @@ export default function Home() {
             <img src="/resources/profile/yangxiao-portrait-cutout.png" alt="杨潇个人照片" />
           </figure>
           <div className="career-stack">
-            <p className="career-heading">EXPERIENCE</p>
-            <article className="career-current">
-              <div className="career-label"><span>01 / 当前工作</span></div>
-              <div className="career-job-title"><b>Tap4Fun</b><span>交互策划 / 设计</span></div>
-              <ul>
-                <li>线上 <b>SLG 长线运营</b>与节日商业化设计</li>
-                <li>主导 <b>Last Check</b> 系统构建与体验设计</li>
-                <li>独立完成<b>体验验证</b>与交互框架落地</li>
-              </ul>
-            </article>
-            <section className="career-internships" aria-label="实习经历">
-              <header><span>02 / 实习经历</span></header>
-              <div><b>腾讯互娱</b><span>王者荣耀国际版</span></div>
-              <div><b>网易互娱</b><span>阴阳师妖怪屋</span></div>
+            <section className="career-group career-work" aria-label="工作经历">
+              <header className="career-group-tag"><span>WORK EXPERIENCE</span><b>工作经历</b><small>03</small></header>
+              <article className="career-card career-card-company">
+                <div className="career-paper">
+                  <span className="career-card-label">CURRENT / 01</span>
+                  <div className="career-card-title"><b>Tap4Fun</b><span>交互策划 / 设计</span></div>
+                  <time>2025.07 — 至今</time>
+                </div>
+              </article>
+              <article className="career-card career-card-project">
+                <div className="career-paper">
+                  <span className="career-card-label">PROJECT / 01</span>
+                  <div className="career-card-title"><b>猿族崛起</b><span>SLG 项目</span></div>
+                  <p><strong>长线运营</strong> · 节日商业化 · 活动体验设计</p>
+                </div>
+              </article>
+              <article className="career-card career-card-project">
+                <div className="career-paper">
+                  <span className="career-card-label">PROJECT / 02</span>
+                  <div className="career-card-title"><b>Last Check</b><span>系统体验项目</span></div>
+                  <p><strong>系统构建</strong> · 体验验证 · 交互框架落地</p>
+                </div>
+              </article>
+            </section>
+            <section className="career-group career-internships" aria-label="实习经历">
+              <header className="career-group-tag"><span>INTERNSHIP</span><b>实习经历</b><small>02</small></header>
+              <article className="career-card career-card-intern">
+                <div className="career-paper"><div><span className="career-card-label">COMPANY / 01</span><b>腾讯互娱</b></div><time>2024.04 — 2024.10</time></div>
+              </article>
+              <article className="career-card career-card-intern">
+                <div className="career-paper"><div><span className="career-card-label">COMPANY / 02</span><b>网易互娱</b></div><time>2023.11 — 2024.04</time></div>
+              </article>
             </section>
           </div>
         </div>
@@ -695,9 +1038,9 @@ export default function Home() {
         <div className="section-heading">
           <div>
             <p className="eyebrow">SELECTED WORKS / 精选作品</p>
-            <h2>四个深度案例，<br />六个系统命题。</h2>
+            <h2>六个完整案例，<br />两类设计命题。</h2>
           </div>
-          <p>前四个案例包含真实界面、动态演示与设计路径，<br />其余项目展示我对不同体验问题的拆解方式。</p>
+          <p>三个运营活动与三个系统玩法，<br />均包含设计重点、交互稿与关键界面。</p>
         </div>
 
         <div className="category-bar" aria-label="作品分类">
@@ -754,12 +1097,17 @@ export default function Home() {
                 {expanded && (
                   <div className="project-detail" id={`details-${project.id}`}>
                     {project.highlights && activeHighlight && (
-                      <section className={`interaction-focus focus-${project.accent}`} aria-labelledby={`focus-title-${project.id}`}>
-                        <div className="focus-heading">
-                          <h4 id={`focus-title-${project.id}`}>一眼看懂设计重心</h4>
+                      <section className={`case-module interaction-focus focus-${project.accent}`} aria-labelledby={`focus-title-${project.id}`}>
+                        <div className="case-section-heading focus-heading">
+                          <h4 id={`focus-title-${project.id}`}>设计重心</h4>
                           <p>选择亮点，大图与动态路径会同步切换。</p>
                         </div>
-                        <div className="focus-tabs" aria-label={`${project.title}交互亮点`}>
+                        <dl className="focus-context" aria-label={`${project.title}设计依据`}>
+                          <div><dt>问题</dt><dd>{project.challenge}</dd></div>
+                          <div><dt>决策</dt><dd>{project.decision}</dd></div>
+                          <div><dt>结果</dt><dd>{project.result}</dd></div>
+                        </dl>
+                        <div className={`focus-tabs tabs-${project.id}`} aria-label={`${project.title}交互亮点`}>
                           {project.highlights.map((highlight, highlightIndex) => (
                             <button
                               type="button"
@@ -772,14 +1120,9 @@ export default function Home() {
                             </button>
                           ))}
                         </div>
-                        <dl className="focus-context" aria-label={`${project.title}设计依据`}>
-                          <div><dt>01 / 问题</dt><dd>{project.challenge}</dd></div>
-                          <div><dt>02 / 决策</dt><dd>{project.decision}</dd></div>
-                          <div><dt>03 / 结果</dt><dd>{project.result}</dd></div>
-                        </dl>
-                        <div className="focus-stage" aria-live="polite">
+                        <div className={`focus-stage focus-stage-${project.id}`} aria-live="polite">
                           <button
-                            className={`focus-screen focus-${project.accent} ${activeHighlight.videoSrc || project.screenAssets?.[activeHighlight.screenIndex] ? "has-real-screen" : "has-blueprint"}`}
+                            className={`focus-screen focus-${project.accent} screen-${project.id} ${activeHighlight.videoSrc || project.screenAssets?.[activeHighlight.screenIndex] ? "has-real-screen" : "has-blueprint"}`}
                             type="button"
                             onClick={() => openPreview({
                               project: project.title,
@@ -790,7 +1133,9 @@ export default function Home() {
                             })}
                             aria-label={`查看${project.title}的${project.screens[activeHighlight.screenIndex]}${activeHighlight.videoSrc ? "视频" : "界面"}`}
                           >
-                            {activeHighlight.videoSrc ? (
+                            {project.id === "quarantine-gameplay" ? (
+                              <QuarantineFocusVisual activeIndex={activeHighlightIndex} />
+                            ) : activeHighlight.videoSrc ? (
                               <video key={`${project.id}-${activeHighlight.screenIndex}`} autoPlay muted loop playsInline preload="metadata">
                                 <source src={activeHighlight.videoSrc} type="video/mp4" />
                               </video>
@@ -809,27 +1154,54 @@ export default function Home() {
                                 <div className="blueprint-action">核心操作 <b>→</b></div>
                               </div>
                             )}
-                            <span>
-                              <b>{project.screens[activeHighlight.screenIndex]}</b>
-                              <i>{activeHighlight.videoSrc ? "点击放大播放 ↗" : project.screenAssets?.[activeHighlight.screenIndex] ? "点击查看大图 ↗" : "待替换真实界面"}</i>
-                            </span>
+                            {project.id !== "quarantine-gameplay" && (
+                              <span>
+                                <b>{project.screens[activeHighlight.screenIndex]}</b>
+                                <i>{activeHighlight.videoSrc ? "点击放大播放 ↗" : project.screenAssets?.[activeHighlight.screenIndex] ? "点击查看大图 ↗" : "待替换真实界面"}</i>
+                              </span>
+                            )}
                           </button>
                           <InteractionFlowViz project={project} highlight={activeHighlight} />
                         </div>
                       </section>
                     )}
 
-                    <section className={`media-showcase video-${project.accent} ${project.video ? "has-video" : "screens-only"}`} aria-labelledby={`media-title-${project.id}`}>
-                      <div className="media-heading">
-                        <h4 id={`media-title-${project.id}`}>{project.mediaTitle || (project.video ? "先看操作节奏，再看关键状态" : "关键界面与状态")}</h4>
+                    {project.documentAsset && (
+                      <section className="case-module document-showcase" aria-labelledby={`document-title-${project.id}`}>
+                        <div className="case-section-heading document-heading">
+                          <h4 id={`document-title-${project.id}`}>交互稿</h4>
+                          <p>完整流程与页面逻辑。点击打开大图，使用滚轮缩放并拖动查看细节。</p>
+                        </div>
+                        <div className="document-section">
+                          <button
+                            className="document-preview"
+                            type="button"
+                            onClick={() => openPreview({ project: project.title, screen: "完整交互稿", accent: project.accent, kind: "image", src: project.documentAsset })}
+                            aria-label={`放大查看${project.title}完整交互稿`}
+                          >
+                            <img src={project.documentAsset} alt="" loading="lazy" />
+                            <span><b>完整交互稿</b><small>点击放大 · 滚轮缩放 · 拖动查看 ↗</small></span>
+                          </button>
+                        </div>
+                      </section>
+                    )}
+
+                    <section className={`case-module media-showcase video-${project.accent} ${project.video ? "has-video" : "screens-only"}`} aria-labelledby={`media-title-${project.id}`}>
+                      <div className="case-section-heading media-heading">
+                        <h4 id={`media-title-${project.id}`}>设计展示</h4>
                         <p>{project.mediaDescription || (project.screenAssets ? "视频在前，界面在后；点击均可放大查看" : "结构示意用于说明信息层级")}</p>
                       </div>
 
                       {project.video && (
+                        <>
+                        <div className="media-gallery-heading media-banner-heading">
+                          <span>01</span>
+                          <b>{project.videoLabel || "完整操作演示"}</b>
+                          <small>01 VIDEO</small>
+                        </div>
                         <div className="media-banner">
                         {project.videoSrc ? (
                           <div className="video-preview-wrap">
-                            <span className="media-banner-label"><strong>01</strong><b>{project.videoLabel || "完整操作演示"}</b></span>
                             <video className="video-player" controls preload="metadata" poster={project.coverAsset}>
                               <source src={project.videoSrc} type="video/mp4" />
                               您的浏览器不支持该视频格式。
@@ -839,7 +1211,8 @@ export default function Home() {
                         ) : (
                           <div className="video-stage" role="img" aria-label={`${project.title}演示视频占位画面`}><div className="play-mark">▶</div><span>00:00 / 01:24</span><b>{project.title}<small>交互演示 · 素材待接入</small></b></div>
                         )}
-                      </div>
+                        </div>
+                        </>
                       )}
 
                       <div className="media-gallery-heading">
@@ -860,7 +1233,7 @@ export default function Home() {
                           ))}
                         </div>
                       ) : (
-                        <div className={`screen-grid ${project.screenAssets ? "has-assets" : ""}`}>
+                        <div className={`screen-grid screens-${project.id} ${project.screenAssets ? "has-assets" : ""}`}>
                           {project.screens.map((screen, screenIndex) => {
                             const screenAsset = project.screenAssets?.[screenIndex];
                             return (
@@ -885,24 +1258,6 @@ export default function Home() {
                       )}
                     </section>
 
-                    {project.documentAsset && (
-                      <div className="document-section">
-                        <div className="document-heading">
-                          <h4>从需求、流程到细节设计</h4>
-                          <p>点击打开大图，使用滚轮缩放，按住鼠标拖动查看细节。</p>
-                        </div>
-                        <button
-                          className="document-preview"
-                          type="button"
-                          onClick={() => openPreview({ project: project.title, screen: "完整交互稿", accent: project.accent, kind: "image", src: project.documentAsset })}
-                          aria-label={`放大查看${project.title}完整交互稿`}
-                        >
-                          <img src={project.documentAsset} alt="" loading="lazy" />
-                          <span><b>完整交互稿</b><small>点击放大 · 滚轮缩放 · 拖动查看 ↗</small></span>
-                        </button>
-                      </div>
-                    )}
-
                     <button className="close-case" type="button" onClick={() => setExpandedId(null)}><b>收起这个案例</b><span>↑</span></button>
                   </div>
                 )}
@@ -913,7 +1268,7 @@ export default function Home() {
       </section>
 
       <section className="about" id="about">
-        <div className="about-number">08<span>+</span></div>
+        <div className="about-number">06<span>CASE</span></div>
         <div className="about-copy">
           <p className="eyebrow">ABOUT / 关于我</p>
           <h2>设计不是装饰界面，<br />而是组织玩家的<span>理解、选择与情绪。</span></h2>
