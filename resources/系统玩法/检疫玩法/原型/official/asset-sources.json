@@ -1,0 +1,16 @@
+{
+  "spriteRoot": "E:/X16client/client/client/Assets/Gameplay/X16/Res/Quarantine/Res/UI/Sprite",
+  "npcLayers": {
+    "dressed": "Res/Common/Video/Other/Quarantine/NPC_1_sbs.mp4",
+    "revealed": "Res/Common/Video/Other/Quarantine/NPC_1_stand_sbs.mp4",
+    "frame": 0,
+    "alpha": "SBS right-half grayscale"
+  },
+  "toolScenes": {
+    "npc-dressed": "E:/X16client/client/client/Assets/Gameplay/X16/Res/Common/Video/Other/Quarantine/NPC_1_sbs.mp4",
+    "npc-underlayer": "E:/X16client/client/client/Assets/Gameplay/X16/Res/Common/Video/Other/Quarantine/NPC_1_stand_sbs.mp4",
+    "wash-dirty": "E:/X16client/client/client/Assets/Gameplay/X16/Res/Common/Video/Other/Quarantine/NPC_2_DirtIdle_nobg_sbs.mp4",
+    "wash-clean": "E:/X16client/client/client/Assets/Gameplay/X16/Res/Common/Video/Other/Quarantine/NPC_2_end_sbs.mp4",
+    "thermo-person": "E:/X16client/client/client/Assets/Gameplay/X16/Res/Common/Video/Other/Quarantine/NPC_2_sbs.mp4"
+  }
+}
