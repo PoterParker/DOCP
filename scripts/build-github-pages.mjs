@@ -34,7 +34,10 @@ async function renderHomePage() {
 
 function withPagesBase(content) {
   return content
-    .replace(/(?:\/DOCP)*\/assets\//g, `${basePath}/assets/`)
+    // Vite's preload dependency table stores bare "assets/..." paths and
+    // prepends "/" at runtime. Keep these entries bare with the Pages prefix.
+    .replace(/(["'`])(?:DOCP\/)*assets\//g, "$1DOCP/assets/")
+    .replace(/(?<![A-Za-z0-9_-])(?:\/DOCP)*\/assets\//g, `${basePath}/assets/`)
     .replace(/(?:\/DOCP)*\/resources\//g, `${basePath}/resources/`)
     .replaceAll('href="/"', `href="${basePath}/"`);
 }

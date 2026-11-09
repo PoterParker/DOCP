@@ -66,3 +66,4 @@ for (const group of systemGroups) {
 }
 
 console.log(`Copied ${assetGroups.length} activity groups, ${systemGroups.length} system groups, ${assetFiles.length} web videos, ${standaloneGroups.length} standalone group, and ${profileFiles.length} profile image.`);
+await cp(join(projectRoot, "public/resources/text-edits.json"), join(projectRoot, "dist/client/resources/text-edits.json"));
